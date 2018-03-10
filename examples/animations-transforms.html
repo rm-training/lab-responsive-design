@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Laying out with grids</title>
+
+  <style>
+
+    body {
+    	font-size: 100%;
+      	padding: 0;
+      	margin: 0;
+    }
+
+    .card {
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #ececec;
+    }
+
+    .card:hover {
+        /* make the mouse a finger pointer like a <a> link hover */
+        cursor: pointer;
+    }
+
+    #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*
+    A 2d transformation
+    */
+
+    #container.transform-2d {
+
+    }
+
+    #container.transform-2d .card {
+        transition: transform 1s ease-in;
+    }
+
+    #container.transform-2d .card:hover {
+        transform: rotate(360deg);
+    }
+
+    /*
+    A 3d transformation
+    */
+
+    #container.transform-3d {
+        /* define some space between the z plane & the user */
+        /* examples: https://developer.mozilla.org/en-US/docs/Web/CSS/perspective */
+        perspective: 800px;
+    }
+
+    #container.transform-3d .card {
+        /* don't show the rear side */
+        backface-visibility: hidden;
+
+        /* tell css it is in 3d space */
+        transform-style: preserve-3d;
+
+        /* the transition */
+        transition: transform 1s ease-in;
+    }
+
+    #container.transform-3d .card:hover {
+         transform: rotateY(360deg);
+    }
+
+  </style>
+</head>
+<body>
+
+	<div>
+	  <h1>CSS Grid Layouts</h1>
+	  <p>...</p>
+	</div>
+
+	<div id="container" class="transform-2d">
+
+		<div class="card">
+			<h2>Card 1</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 2</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 3</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 4</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 5</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 6</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

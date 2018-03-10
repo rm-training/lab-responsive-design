@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Laying out with grids</title>
+
+  <style>
+
+    body {
+    	font-size: 100%;
+      	padding: 0;
+      	margin: 0;
+    }
+
+    .card {
+    	border: 1px solid #000;
+    	border-radius: 5px;
+    	background-color: #ececec;
+
+        /* animate background-color changes */
+        transition: background-color 1s ease-in;
+    }
+
+    .card:hover {
+        background-color: #f90;
+
+        /* make the mouse a finger pointer like a <a> link hover */
+        cursor: pointer;
+    }
+
+    #container {
+    	display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+  </style>
+</head>
+<body>
+
+	<div>
+	  <h1>CSS Grid Layouts</h1>
+	  <p>...</p>
+	</div>
+
+	<div id="container">
+
+		<div class="card">
+			<h2>Card 1</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 2</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 3</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 4</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 5</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 6</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

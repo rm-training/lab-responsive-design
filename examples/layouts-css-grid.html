@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Laying out with grids</title>
+
+  <style>
+
+    body {
+    	font-size: 100%;
+      	padding: 0;
+      	margin: 0;
+    }
+
+    .card {
+    	border: 1px solid #000;
+    	border-radius: 5px;
+    	background-color: #ececec;
+    }
+
+    #container {
+        /* treat me as a grid */
+    	display: grid;
+
+        /* these are the column sizes */
+        grid-template-columns: 50px auto auto;
+
+        /* or */
+        grid-template-columns: 1fr 1fr 1fr;
+
+        /* or */
+        grid-template-columns: repeat(3, 1fr);
+
+        /* this is my gutter */
+        /*grid-gap: 10px;/**/
+
+        /* optionally: set the size of rows */
+        /*grid-template-rows: 1fr 2fr 1fr;/**/
+
+        /* optionally: what happens when content goes outside the defined rows? */;
+        /*grid-auto-rows: minmax(100px, auto);/**/
+    }
+
+    /*
+    can customize how many cells my items span
+    basically it is:
+        from x column|row
+        / up to (but not including) y
+    */
+    /*
+    .card:nth-child(1); {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+    .card:nth-child(2) {
+      grid-column: 2 / 4;
+      grid-row: 1 / 3;
+    }
+    .card:nth-child(3) {
+      grid-column: 1;
+      grid-row: 2 / 5;
+    }
+    .card:nth-child(4) {
+      grid-column: 3;
+      grid-row: 3;
+    }
+    .card:nth-child(5) {
+      grid-column: 2;
+      grid-row: 4;
+    }
+    .card:nth-child(6) {
+      grid-column: 3;
+      grid-row: 4;
+    }
+    */
+
+    /*
+    example of a grid template in use
+    */
+    #container {
+        grid-template-areas: "head head"
+                       "nav  main"
+                       "nav  foot";
+        grid-template-rows: 50px 1fr 30px;
+        grid-template-columns: 150px 1fr;
+    }
+
+    .card:nth-child(1); {
+      grid-area: head;
+    }
+    .card:nth-child(2) {
+      grid-area: nav;
+    }
+    .card:nth-child(3) {
+      grid-area: main;
+    }
+    .card:nth-child(4) {
+      grid-area: foot;
+    }
+    .card:nth-child(5) {
+      grid-area: main;
+    }
+    .card:nth-child(6) {
+      grid-area: foot;
+    }
+
+
+  </style>
+</head>
+<body>
+
+	<div>
+	  <h1>CSS Grid Layouts</h1>
+	  <p>...</p>
+	</div>
+
+	<div id="container">
+
+		<div class="card">
+			<h2>Card 1</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 2</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 3</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 4</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 5</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 6</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

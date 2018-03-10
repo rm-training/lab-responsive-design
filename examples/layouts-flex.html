@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Laying out with float</title>
+
+  <style>
+
+    body {
+    	font-size: 100%;
+      	padding: 0;
+      	margin: 0;
+    }
+
+    .card {
+    	border: 1px solid #000;
+    	border-radius: 5px;
+    	background-color: #ececec;
+    }
+
+    /* without flex */
+    /*.card {
+    	width: 30%;
+    	margin-right: 3%;
+    	margin-bottom: 3%;
+    	float: left;
+    }
+
+    .card:nth-child(3n) {
+    	margin-right: 0;
+    }*/
+
+    /* with flex */
+    #container {
+    	height: 80vh;
+
+    	display: flex;
+
+    	/* set the main-axis */
+    	flex-direction: row; /* column|row|row-reverse|column-reverse */
+
+    	/* tell child items to wrap to new lines */
+    	flex-wrap: wrap; /* wrap|no-wrap|wrap-reverse */
+
+    	/* controls alignment on cross axis */
+    	align-items: stretch; /* flex-start | flex-end | center | baseline | stretch */
+    }
+
+    .flex-four-across .card {
+    	width: 25%;
+
+    	flex-grow: 0; /* 0 or any number */
+    	flex-shrink: 1; /* 1 or 0 */
+    	flex-basis: auto; /* auto or width */
+    	align-self: auto; /*  align-self: auto | flex-start | flex-end | center | baseline | stretch; */
+        order: 0; /* or any number */
+    }
+
+    /*
+    grow will set this card
+	to fill twice as much space
+    */
+    .flex-four-across .card:nth-child(2) {
+    	flex-grow: 2;
+    }
+  </style>
+</head>
+<body>
+
+	<div>
+	  <h1>Flex Layouts</h1>
+	  <p>...</p>
+	</div>
+
+	<div id="container" class="flex-four-across">
+
+		<div class="card">
+			<h2>Card 1</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 2</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 3</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 4</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 5</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+		<div class="card">
+			<h2>Card 6</h2>
+			<p>Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

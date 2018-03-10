@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Laying out with float</title>
+
+  <style>
+
+    body {
+    	font-size: 100%;
+      	padding: 0;
+      	margin: 0;
+    }
+
+    #container {
+    	/*
+    	how we fixed wrapping containers around
+    	floated elements, besides a .clearfix hack
+    	*/
+    	/* overflow: auto; /**/
+
+    	/*
+    	the modern way
+    	very new -- wont' work in all browsers
+    	*/
+    	display: flow-root;
+    }
+
+    /*
+    will float to the left
+    */
+    .sidebar {
+    	float: left;
+    	width: 30%;
+    }
+
+    /*
+    will float to the right
+    */
+    .content {
+    	float: right;
+    	width: 70%;
+    	background-color:#ececec;
+    }
+
+    .floating-cat {
+    	float: left;
+    	padding: 0 1em 1em 0;
+
+    	/*
+    	Try me:
+    	uncomment to make it circular
+    	*/
+    	/*
+    	shape-outside: circle(50%);
+    	border-radius: 50%;
+    	/**/
+    }
+
+    /*
+    footer
+    will break over any floated items
+    this was always necessary when floating
+    */
+    #footer {
+    	clear: both;
+    }
+
+    .content,
+    .sidebar {
+    	outline: 1px solid #f90;
+    }
+
+    /*
+	Nav!
+	An example of using floats
+	to create a  menu
+    */
+    #sticky-nav {
+      /* or position static, sticky, fixed */
+      position: absolute;
+      top: 5px;
+      right: 0;
+    }
+
+    #sticky-nav ul {
+    	padding: 0;
+    	margin: 0;
+    	list-style: none;
+    }
+
+    #sticky-nav ul li {
+    	float: right;
+    	padding: 5px;
+    	background-color: #ececec;
+    	border-radius: 5px;
+    	margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+	<div>
+	  <h1>Float Layouts</h1>
+	  <p>...</p>
+	</div>
+
+	<div id="sticky-nav">
+	  <ul>
+	    <li>Item one</li>
+	    <li>Item two</li>
+	    <li>Item three</li>
+	  </ul>
+	</div>
+
+	<div id="container">
+
+		<div class="sidebar">
+
+			<h1>Hello</h1>
+
+			<p>I am using percent</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.
+			</p>
+
+		</div>
+
+		<div class="content">
+
+			<h1>Hello</h1>
+
+			<p>I am using ems</p>
+
+			<img class="floating-cat" src="https://i.pinimg.com/564x/4b/42/a9/4b42a9267c2447b8c80addd0f0ae8e91.jpg">
+
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+
+		</div>
+
+	</div>
+
+	<footer>
+		<p>Oy, footer here!</p>
+	</footer>
+</body>
+</html>
