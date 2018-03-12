@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mobile - Responsive Design training</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            background: antiquewhite;
+        }
+        nav {
+            background: tomato;
+        }
+        #sidebar {
+            background: papayawhip;
+        }
+        #main {
+            background: lemonchiffon;
+        }
+        footer {
+            background: darkseagreen;
+        }
+
+        .grid {
+            display: grid;
+
+            grid-template-columns: 2fr 8fr 2fr;
+            grid-template-areas:
+                "header header header"
+                "nav main sidebar"
+                "nav main ad"
+                "footer footer footer";
+            grid-gap: .5em;
+
+            /* don't need this but it does set height equally */
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            /* and this spans the full viewport height */
+            min-height: 100vh;
+
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        #main {
+            grid-area: main;
+        }
+
+        #sidebar {
+            grid-area: sidebar;
+        }
+
+        .ad-area {
+            grid-area: ad;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        @media (max-width: 500px) {
+            .grid {
+                grid-template-columns: 2fr 1fr;
+                grid-template-areas:
+                    "header header"
+                    "nav nav"
+                    "main main"
+                    "sidebar ad"
+                    "footer footer";
+            }
+        }
+
+        .grid {
+            animation-duration: 3s;
+            animation-timing-function: ease-in;
+            animation-name: pulse;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes pulse {
+        from {
+            grid-gap: .5em;
+          }
+          to {
+            grid-gap: 1em;
+          }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <header>
+            <h1>Welcome to my site!</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Sign in</a></li>
+            </ul>
+        </nav>
+        <section id="main">
+            <h1>Main content area</h1>
+            <p>More stuff</p>
+        </section>
+        <aside id="sidebar">
+            <h1>Aside</h1>
+            <p>This is some generic content to the side</p>
+        </aside>
+        <div class="ad-area">
+            <p>Some advertising</p>
+        </div>
+        <footer>
+            <h1>Footer</h1>
+            <h6>Copyright 1986</h6>
+        </footer>
+    </div>
+</body>
+</html>
