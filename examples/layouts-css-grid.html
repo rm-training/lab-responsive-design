@@ -16,39 +16,40 @@
     }
 
     .card {
+      box-sizing: border-box;
     	border: 1px solid #000;
     	border-radius: 5px;
     	background-color: #ececec;
     }
 
     #container {
-        /* treat me as a grid */
+      /* treat me as a grid */
     	display: grid;
 
-        /* these are the column sizes */
-        grid-template-columns: 50px auto auto;
+      /* these are the column sizes */
+      /*grid-template-columns: 50px auto auto;*/
 
-        /* or */
-        grid-template-columns: 1fr 1fr 1fr;
+      /* or */
+      grid-template-columns: 1fr 1fr 1fr;
 
-        /* or */
-        grid-template-columns: repeat(3, 1fr);
+      /* or */
+      /*grid-template-columns: repeat(3, 1fr);*/
 
-        /* this is my gutter */
-        /*grid-gap: 10px;/**/
+      /* this is my gutter */
+      /*grid-gap: 10px;/**/
 
-        /* optionally: set the size of rows */
-        /*grid-template-rows: 1fr 2fr 1fr;/**/
+      /* optionally: set the size of rows */
+      /*grid-template-rows: 1fr 2fr 1fr;/**/
 
-        /* optionally: what happens when content goes outside the defined rows? */;
-        /*grid-auto-rows: minmax(100px, auto);/**/
+      /* optionally: what happens when content goes outside the defined rows? */;
+      /*grid-auto-rows: minmax(100px, auto);/**/
     }
 
     /*
     can customize how many cells my items span
     basically it is:
-        from x column|row
-        / up to (but not including) y
+      from x column|row
+      / up to (but not including) y
     */
     /*
     .card:nth-child(1); {
@@ -80,6 +81,7 @@
     /*
     example of a grid template in use
     */
+  /*
     #container {
         grid-template-areas: "head head"
                        "nav  main"
@@ -107,7 +109,7 @@
       grid-area: foot;
     }
 
-
+ */
   </style>
 </head>
 <body>

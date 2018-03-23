@@ -9,7 +9,8 @@
         body {
             padding: 5px;
         }
-        .row {
+        .column {
+            box-sizing: border-box;
             float: left;
             width: 30vw;
             border: 2px black solid;
@@ -19,18 +20,11 @@
             text-align: center;
             vertical-align: middle;
         }
-
-        @media (max-width:1024px) {
-            .row {
-                width: 100%;
-                float: none;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="row">First box</div>
-    <div class="row">Second box</div>
-    <div class="row">Third box</div>
+    <div class="column">First box</div>
+    <div class="column">Second box</div>
+    <div class="column">Third box</div>
 </body>
 </html>
